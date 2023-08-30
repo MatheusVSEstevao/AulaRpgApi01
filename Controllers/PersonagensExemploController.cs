@@ -38,12 +38,6 @@ namespace RpgApi.Controllers
         {
             return Ok(personagens.FirstOrDefault(pe => pe.Id == id));
         }
-         [HttpPost]
-         public IActionResult AddPersonagem(Personagem novoPersonagem)
-         {
-            personagens.Add(novoPersonagem);
-            return Ok(personagens);
-         }
          [HttpGet("GetOrdenado")]
          public IActionResult GetOrdem()
          {
@@ -54,6 +48,61 @@ namespace RpgApi.Controllers
          public IActionResult GetQuantidade()
          {
             return Ok("Quantidade de personagens: " + personagens.Count);
+         }
+         [HttpGet("GetSomaForca")]
+         public IActionResult GetSomaForca()
+         {
+            return Ok(personagens.Sum(p => p.Forca));
+         }
+         [HttpGet("GetSemCavaleiro")]
+         public IActionResult GetSemCavaleiro()
+         {
+            List<Personagem> ListaBusca = personagens.FindAll(p => p.Classe != ClasseEnum.Cavaleiro);
+            return Ok(ListaBusca);
+         }
+         [HttpGet("GetByNomeAproximado/{nome}")]
+         public IActionResult GetByNomeAproximado( string nome)
+         {
+            List<Personagem> ListaBusca = personagens.FindAll(p => p.Nome.Contains(nome));
+            return Ok(ListaBusca);
+         }
+         [HttpGet("RemoverMagos")]
+         public IActionResult GetRemovendoMagos()
+         {
+            Personagem pRemove = personagens.Find(p => p.Classe == ClasseEnum.Mago);
+            personagens.Remove(pRemove);
+            return Ok("Personagem Removido: " + pRemove.Nome);
+         }
+         [HttpGet("GetByForca/{forca}")]
+         public IActionResult Get(int forca)
+         {
+           List<Personagem> ListaFinal = personagens.FindAll(p => p.Forca == forca );
+            return Ok(ListaFinal);
+         }
+         [HttpPost]
+         public IActionResult AddPersonagem (Personagem novoPersonagem)
+         {
+            if (novoPersonagem.Inteligencia == 0)
+            return BadRequest("Inteligencia não pode ter o valor igual a 0 (zero)");
+            personagens.Add(novoPersonagem);
+            return Ok(personagens);
+         }
+         [HttpPut]
+         public IActionResult UpdatePersonagem(Personagem p)
+         {Personagem personagemAlterado = personagens.Find(pers => pers.Id == p.Id);
+         personagemAlterado.Nome = p.Nome;
+         personagemAlterado.PontosVida = p.PontosVida;
+         personagemAlterado.Forca = p.Forca;
+         personagemAlterado.Defesa = p.Defesa;
+         personagemAlterado.Inteligencia = p.Inteligencia;
+         personagemAlterado.Classe = p.Classe;
+         return Ok(personagens);
+         }
+         [HttpDelete ("{id}")]
+         public IActionResult Delete(int id)
+         {
+            personagens.RemoveAll(pers => pers.Id == id);
+            return Ok(personagens);
          }
 
     }
