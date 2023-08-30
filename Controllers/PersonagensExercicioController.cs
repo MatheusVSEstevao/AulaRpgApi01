@@ -25,14 +25,14 @@ namespace RpgApi.Controllers
         public IActionResult GetByNome(string nome)
         {
             List<Personagem> ListaNome = personagens.FindAll(p => p.Nome == nome );
-             if(nome != null)
+             if(string.IsNullOrEmpty(nome))
              {
                 return Ok(ListaNome);
+
              }
              else
              {
                  return BadRequest("Nome não existe");
-                 
              }
              
              
