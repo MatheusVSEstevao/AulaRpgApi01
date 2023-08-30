@@ -25,7 +25,7 @@ namespace RpgApi.Controllers
         public IActionResult GetByNome(string nome)
         {
             List<Personagem> ListaNome = personagens.FindAll(p => p.Nome == nome );
-             if(string.IsNullOrEmpty(nome))
+             if(ListaNome.Count != 0)
              {
                 return Ok(ListaNome);
 
