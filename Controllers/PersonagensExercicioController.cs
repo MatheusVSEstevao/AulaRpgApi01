@@ -98,11 +98,25 @@ namespace RpgApi.Controllers
 
         }
 
-        [HttpGet("GetByClasse")]
-        public IActionResult GetByClasse()
+        [HttpGet("GetByClasse/{id}")]
+        public List<Personagem> ObterPersonagensDaMesmaClasse(int id)
         {
-            
+            // Localize o personagem com o ID especificado.
+            Personagem personagemSelecionado = personagens.FirstOrDefault(p => p.Id == id);
 
+            if (personagemSelecionado == null)
+            {
+               
+                return new List<Personagem>();
+            }
+
+            
+            var classeDoPersonagem = personagemSelecionado.Classe;
+
+            
+            var personagensDaMesmaClasse = personagens.Where(p => p.Classe == classeDoPersonagem).ToList();
+
+            return personagensDaMesmaClasse;
         }
     }
 

@@ -64,3 +64,36 @@ D:\Artur_Caio\DS\AulaRpgApi01\obj\Debug\net7.0\scopedcss\bundle\RpgApi.styles.cs
 D:\Artur_Caio\DS\AulaRpgApi01\obj\Debug\net7.0\RpgApi.csproj.CopyComplete
 D:\Artur_Caio\DS\AulaRpgApi01\obj\Debug\net7.0\RpgApi.genruntimeconfig.cache
 D:\Artur_Caio\DS\AulaRpgApi01\obj\Debug\net7.0\ref\RpgApi.dll
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\RpgApi.csproj.AssemblyReference.cache
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\RpgApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\RpgApi.AssemblyInfoInputs.cache
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\RpgApi.AssemblyInfo.cs
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\RpgApi.csproj.CoreCompileInputs.cache
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\RpgApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\RpgApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\RpgApi.dll
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\refint\RpgApi.dll
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\RpgApi.pdb
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\bin\Debug\net7.0\appsettings.json
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\bin\Debug\net7.0\RpgApi.exe
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\bin\Debug\net7.0\RpgApi.deps.json
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\bin\Debug\net7.0\RpgApi.runtimeconfig.json
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\bin\Debug\net7.0\RpgApi.dll
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\bin\Debug\net7.0\RpgApi.pdb
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\staticwebassets\msbuild.RpgApi.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\staticwebassets\msbuild.build.RpgApi.props
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.RpgApi.props
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.RpgApi.props
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\scopedcss\bundle\RpgApi.styles.css
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\RpgApi.csproj.CopyComplete
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\RpgApi.genruntimeconfig.cache
+C:\Users\artur\OneDrive\Área de Trabalho\etec\Segundo Semestre\DS\RPGapi01\AulaRpgApi01\obj\Debug\net7.0\ref\RpgApi.dll
