@@ -20,24 +20,89 @@ namespace RpgApi.Controllers
             new Personagem() { Id = 6, Nome = "Celeborn", PontosVida=100, Forca=21, Defesa=13, Inteligencia=34, Classe=ClasseEnum.Clerigo },
             new Personagem() { Id = 7, Nome = "Radagast", PontosVida=100, Forca=25, Defesa=11, Inteligencia=35, Classe=ClasseEnum.Mago }
         };
-        
+
         [HttpGet("GetByNome/{nome}")]
         public IActionResult GetByNome(string nome)
         {
-            List<Personagem> ListaNome = personagens.FindAll(p => p.Nome == nome );
-             if(ListaNome.Count != 0)
-             {
+            List<Personagem> ListaNome = personagens.FindAll(p => p.Nome == nome);
+            if (ListaNome.Count != 0)
+            {
                 return Ok(ListaNome);
 
-             }
-             else
-             {
-                 return BadRequest("Nome não existe");
-             }
-             
-             
+            }
+            else
+            {
+                return BadRequest("Nome não existe");
+            }
 
+
+
+
+        }
+
+        [HttpPost("PostValidacao")]
+        public IActionResult PostValidacao([FromBody] Personagem personagem)
+        {
+
+            if (personagem.Inteligencia >= 30 && personagem.Defesa >= 10)
+            {
+
+                personagens.Add(personagem);
+                return Ok(personagem);
+            }
+            else
+            {
+                return BadRequest("Personagem não atende aos requisitos mínimos de Defesa e Inteligência");
+            }
+        }
+
+        [HttpPost("PostValidacaoMago")]
+        public IActionResult PostValidacaoMago(Personagem Classe, int inteligencia, Personagem personagem)
+        {
+            if (personagem.Classe == ClasseEnum.Mago && inteligencia > 35)
+            {
+                personagens.Add(personagem);
+                return Ok(personagem);
+
+            }
+            else
+            {
+                return BadRequest("Personagem Mago deve ter no minimo 35 de Inteligencia ou mais para ser incluso");
+            }
+
+
+        }
+
+        [HttpGet("GetClerigoMago")]
+        public IActionResult GetClerigoMago(Personagem Classe, int PontosVida)
+        {
+
+            Personagem clerigosemagos = personagens.Find(p => p.Classe == ClasseEnum.Cavaleiro);
+            personagens.Remove(clerigosemagos);
+            List<Personagem> ListaFinal = personagens.OrderByDescending(p => p.PontosVida).ToList();
+            return Ok(ListaFinal);
+
+        }
+
+        [HttpGet("GetEstatistica")]
+        public IActionResult GetEstatistica(Personagem Inteligencia)
+        {
+            int qtPersonagens = personagens.Count;
+            int somInteligencia = personagens.Sum(p => p.Inteligencia);
+            var informacoesGerais = new
+            {
+                QuantidadeDePersonagens = qtPersonagens,
+                SomaDeInteligencias = somInteligencia
+            };
+            return Ok(informacoesGerais);
+
+        }
+
+        [HttpGet("GetByClasse")]
+        public IActionResult GetByClasse()
+        {
             
+
         }
     }
 
