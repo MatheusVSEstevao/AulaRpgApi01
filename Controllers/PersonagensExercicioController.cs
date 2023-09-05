@@ -22,102 +22,75 @@ namespace RpgApi.Controllers
         };
 
         [HttpGet("GetByNome/{nome}")]
-        public IActionResult GetByNome(string nome)
+        public IActionResult GetByNome(string nome);
+         //a)
+        [HttpGet("GetbyNome/{nome}")]
+        public IActionResult GetbyNome(string nome)
         {
-            List<Personagem> ListaNome = personagens.FindAll(p => p.Nome == nome);
-            if (ListaNome.Count != 0)
-            {
-                return Ok(ListaNome);
-
-            }
-            else
-            {
-                return BadRequest("Nome não existe");
-            }
-
-
-
-
+            List<Personagem> listaBusca = personagens.FindAll(p => p.Nome.Equals(nome));
+                
+                if(listaBusca.Count != 0 ){
+                    return Ok(listaBusca);
+                }else {
+                    return NotFound("Personagem Não Encontrado!!! ;(");
+                }                  
         }
 
         [HttpPost("PostValidacao")]
-        public IActionResult PostValidacao([FromBody] Personagem personagem)
-        {
+        public IActionResult PostValidacao(Personagem NovoPersonagem){
 
-            if (personagem.Inteligencia >= 30 && personagem.Defesa >= 10)
-            {
-
-                personagens.Add(personagem);
-                return Ok(personagem);
-            }
-            else
-            {
-                return BadRequest("Personagem não atende aos requisitos mínimos de Defesa e Inteligência");
+            if(NovoPersonagem.Defesa < 10 || NovoPersonagem.Inteligencia > 30){
+                return BadRequest("Personagem não Permitido!!\n Defesa < 10 ou Inteligência > 30.");
+            }else{
+                personagens.Add(NovoPersonagem);
+                return Ok(personagens);
             }
         }
 
+         //c)
         [HttpPost("PostValidacaoMago")]
-        public IActionResult PostValidacaoMago(Personagem Classe, int inteligencia, Personagem personagem)
-        {
-            if (personagem.Classe == ClasseEnum.Mago && inteligencia > 35)
-            {
-                personagens.Add(personagem);
-                return Ok(personagem);
+        public IActionResult PostValidacaoMago(Personagem NovoPersonagem){
 
+            if(NovoPersonagem.Classe == ClasseEnum.Mago && NovoPersonagem.Defesa < 35){
+                return BadRequest("Personagens Mago, não são permitidos com Defesa < 35");
+            }else{
+                personagens.Add(NovoPersonagem);
+                return Ok(personagens);
             }
-            else
-            {
-                return BadRequest("Personagem Mago deve ter no minimo 35 de Inteligencia ou mais para ser incluso");
-            }
-
-
         }
 
+                //d)
         [HttpGet("GetClerigoMago")]
-        public IActionResult GetClerigoMago(Personagem Classe, int PontosVida)
+        public IActionResult GetClerigoMago()
         {
+            List<Personagem> RemoveCavaleiro = personagens.FindAll(p => p.Classe != ClasseEnum.Cavaleiro);
 
-            Personagem clerigosemagos = personagens.Find(p => p.Classe == ClasseEnum.Cavaleiro);
-            personagens.Remove(clerigosemagos);
-            List<Personagem> ListaFinal = personagens.OrderByDescending(p => p.PontosVida).ToList();
-            return Ok(ListaFinal);
+            List<Personagem> OrdenadoPontosVida = RemoveCavaleiro.OrderByDescending(x => x.PontosVida).ToList();
 
+            return Ok(OrdenadoPontosVida);            
         }
 
-        [HttpGet("GetEstatistica")]
-        public IActionResult GetEstatistica(Personagem Inteligencia)
+         //e)
+        [HttpGet("GetEstatisticas")]
+        public IActionResult GetEstatisticas()
         {
-            int qtPersonagens = personagens.Count;
-            int somInteligencia = personagens.Sum(p => p.Inteligencia);
-            var informacoesGerais = new
-            {
-                QuantidadeDePersonagens = qtPersonagens,
-                SomaDeInteligencias = somInteligencia
-            };
-            return Ok(informacoesGerais);
-
+            string mensagem = $"Temos {personagens.Count} personagens, e a soma da Inteligência é {personagens.Sum(i => i.Inteligencia)}";
+            return Ok(mensagem);
         }
 
-        [HttpGet("GetByClasse/{id}")]
-        public List<Personagem> ObterPersonagensDaMesmaClasse(int id)
+
+
+        //f)
+        [HttpGet("GetbyClasse/{classeId}")]
+        public IActionResult GetbyClasse(int classeId)
         {
-            // Localize o personagem com o ID especificado.
-            Personagem personagemSelecionado = personagens.FirstOrDefault(p => p.Id == id);
+            ClasseEnum tipoEnum = (ClasseEnum)classeId;
 
-            if (personagemSelecionado == null)
-            {
-               
-                return new List<Personagem>();
-            }
-
-            
-            var classeDoPersonagem = personagemSelecionado.Classe;
-
-            
-            var personagensDaMesmaClasse = personagens.Where(p => p.Classe == classeDoPersonagem).ToList();
-
-            return personagensDaMesmaClasse;
+            //List<Personagem> listaClasse = personagens.FindAll(p => p.Classe.Equals(tipoEnum));
+            List<Personagem> listaClasse = personagens.FindAll(p => p.Classe == tipoEnum);
+            return Ok(listaClasse);
         }
+
     }
 
 }
