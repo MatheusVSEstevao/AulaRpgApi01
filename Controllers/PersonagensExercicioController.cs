@@ -22,9 +22,6 @@ namespace RpgApi.Controllers
         };
 
         [HttpGet("GetByNome/{nome}")]
-        public IActionResult GetByNome(string nome);
-         //a)
-        [HttpGet("GetbyNome/{nome}")]
         public IActionResult GetbyNome(string nome)
         {
             List<Personagem> listaBusca = personagens.FindAll(p => p.Nome.Equals(nome));
