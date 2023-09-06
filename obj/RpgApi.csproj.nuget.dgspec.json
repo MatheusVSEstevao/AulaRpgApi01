@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\AulaRpgApi01\\RpgApi.csproj": {}
+    "D:\\Artur_Caio\\DS\\rpgApi\\AulaRpgApi01\\RpgApi.csproj": {}
   },
   "projects": {
-    "D:\\AulaRpgApi01\\RpgApi.csproj": {
+    "D:\\Artur_Caio\\DS\\rpgApi\\AulaRpgApi01\\RpgApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AulaRpgApi01\\RpgApi.csproj",
+        "projectUniqueName": "D:\\Artur_Caio\\DS\\rpgApi\\AulaRpgApi01\\RpgApi.csproj",
         "projectName": "RpgApi",
-        "projectPath": "D:\\AulaRpgApi01\\RpgApi.csproj",
+        "projectPath": "D:\\Artur_Caio\\DS\\rpgApi\\AulaRpgApi01\\RpgApi.csproj",
         "packagesPath": "C:\\Users\\etechas\\.nuget\\packages\\",
-        "outputPath": "D:\\AulaRpgApi01\\obj\\",
+        "outputPath": "D:\\Artur_Caio\\DS\\rpgApi\\AulaRpgApi01\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
